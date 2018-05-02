@@ -1,0 +1,184 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Oswald'), local('Oswald'), url(https://fonts.googleapis.com/css?family=Oswald) format('woff2');
+	unicode-range: U+30-39;
+  }
+body {
+	padding: 10px;
+	background: #f3f2ed;
+	font-family: 'raleway';
+	font-size: 12pt;
+	font-weight: 300;
+	color: #8A8A8A;
+	display: flex;
+	justify-content: center;
+}
+
+h1, h2, h3 {
+	margin: 0px;
+	padding: 0px;
+	font-weight: 600;
+}
+a {
+	color: #3182bd;
+}
+
+strong {
+	font-weight: 700;
+	color: #2A2A2A;
+}
+
+.container .row, .col {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+.container {
+	width: 80%;
+	margin-top: 150px;
+}
+.col {
+	width: 50%;
+}
+.col-1 {
+	width: 40%;
+}
+.col-2 {
+	width: 60%;
+	align-items: flex-start;
+}
+
+svg {
+	width: 100%;
+}
+
+#row-selection {
+	margin: 10px 0px;
+}
+.chart-wrapper, .chart-title {
+	background: #fff;
+	border-radius: 3px;
+	margin: 10px 5px 10px 5px;
+	border-bottom: 1px solid #d7d7d7;
+	color: #8A8A8A;
+	text-align: center;
+	padding: 7px 10px 4px;
+  }
+  
+  .chart-wrapper svg{
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  }
+
+#date-chart {
+	width: 100%;
+}
+#vmap {
+	width: 100%;
+	height: 100%;
+}
+nav {
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+button {
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	cursor:pointer;
+	width: 30%;
+	color:#fff;
+	margin: 10px;
+	background-color: #3182bd;
+	font-size: 40px;
+	transition: 0.5s;
+	
+	}
+button:hover {
+	background-color:#70a1ef;
+}
+
+
+
+/**button {
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	cursor:pointer;
+	width: 100px;
+	height: 100px;
+	color:#fff;
+	margin: 10px;
+	background-color: #3182bd;
+	font-size: 40px;
+	position: fixed;
+    right: 0;
+	bottom: 0;
+	transition: 0.5s;
+	}
+button:hover {
+	background-color:#70a1ef;
+}
+**/
+
+#total-projects, #net-donations, #menuselect {
+		color: #3182bd;
+		width: 30%;
+		position:relative;
+		font-size: 30px;
+		border:1px solid #dfdfdf;
+		justify-content: stretch;
+		text-align: center;
+	}
+
+.dc-select-menu {
+		background: white;
+		width: 100%;
+		border:none;
+		position:relative;
+		font-size: 15px;
+		text-align: center;
+		color: #8A8A8A;
+		vertical-align: middle;
+		text-align: center;
+		margin-top: 20px;
+		height:40px;
+	}
+.dc-legend, .dc-chart, .chart-title, .box text {
+	font-size: 20px;
+}
+footer {
+	padding-top: 80px;
+}
+
+@media only screen and (max-width: 1000px) {
+
+	.col {
+		width: 100%;
+	}
+
+}
+@media only screen and (max-width: 800px) {
+
+	.col-1, .col-2 {
+		width: 100%;
+	}
+
+}
