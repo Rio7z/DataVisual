@@ -120,13 +120,13 @@ function makeGraphs(error, apiData) {
 
 	selectField = dc.selectMenu('#menuselect')
         .dimension(state)
-        .group(stateGroup); 
+		.group(stateGroup); 
+		
 
        dc.dataCount("#row-selection")
         .dimension(ndx)
-        .group(all);
-
-
+		.group(all);
+		
 	totalProjects
 		.formatNumber(d3.format("d"))
 		.valueAccessor(function(d){return d; })
@@ -190,7 +190,7 @@ function makeGraphs(error, apiData) {
 
     stateDonations
     	//.width(800)
-        .height(499)
+        .height(506)
         .transitionDuration(1000)
         .dimension(state)
         .group(totalDonationsState)

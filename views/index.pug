@@ -11,26 +11,28 @@ html
     link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', rel='stylesheet')
 
   body
+    .select
+      #row-selection.dc-data-count.dc-chart
+        span.filter-count _
+        |  selected out of 
+        span.total-count _
+        |  records
     nav
-      #menuselect.chart-wrapper
+      #menuselect
         .chart-title
           | State Selector 
-      #total-projects.chart-wrapper
+      #total-projects
         .chart-title
           | Total Donation Count 
-      #net-donations.chart-wrapper
+      #net-donations
         .chart-title
           | Nett Donations ($)
       button(onClick="javascript:dc.filterAll();dc.redrawAll();")
         i.fa.fa-undo
-
-    .container
+    
+    .container 
       .row
-        #row-selection.dc-data-count.dc-chart
-          span.filter-count _
-          |  selected out of 
-          span.total-count _
-          |  records
+        h1 Fair Report
       .row
           #vmap(style='width: 100%; height: 400px;')
       .row

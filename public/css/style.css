@@ -19,10 +19,13 @@ body {
 	justify-content: center;
 }
 
-h1, h2, h3 {
+h2, h3 {
 	margin: 0px;
 	padding: 0px;
 	font-weight: 600;
+}
+h1 {
+	padding:50px 0px;
 }
 a {
 	color: #3182bd;
@@ -41,8 +44,8 @@ strong {
 }
 
 .container {
-	width: 80%;
-	margin-top: 150px;
+	width: 60%;
+	margin-top: 50px;
 }
 .col {
 	width: 50%;
@@ -65,13 +68,14 @@ svg {
 .chart-wrapper, .chart-title {
 	background: #fff;
 	border-radius: 3px;
-	margin: 10px 5px 10px 5px;
-	border-bottom: 1px solid #d7d7d7;
+	margin: 10px 5px 0px 5px;
 	color: #8A8A8A;
 	text-align: center;
 	padding: 7px 10px 4px;
   }
-  
+  .chart-wrapper {
+	border:1px solid #dfdfdf;
+  }
   .chart-wrapper svg{
   position: relative;
   left: 50%;
@@ -87,24 +91,43 @@ svg {
 	width: 100%;
 	height: 100%;
 }
+/*
 nav {
 	display: flex;
 	justify-content: center;
 	position: fixed;
 	top: 0;
-	width: 100%;
 	z-index: 1;
 }
+*/
+.select {
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1;
+	background-color: white;
+	border-bottom:1px solid #dfdfdf;
+}
+nav {
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	margin-top:43px;
+	width: 100%;
+	bottom: 0;
+	z-index: 2;
+	background-color: white;
+	border-top:1px solid #dfdfdf;
+}
+
 
 button {
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
+	border:none;
 	cursor:pointer;
-	width: 30%;
+	width: 20%;
 	color:#fff;
-	margin: 10px;
 	background-color: #3182bd;
 	font-size: 40px;
 	transition: 0.5s;
@@ -140,10 +163,9 @@ button:hover {
 
 #total-projects, #net-donations, #menuselect {
 		color: #3182bd;
-		width: 30%;
+		width: 20%;
 		position:relative;
-		font-size: 30px;
-		border:1px solid #dfdfdf;
+		font-size: 40px;
 		justify-content: stretch;
 		text-align: center;
 	}
@@ -152,20 +174,17 @@ button:hover {
 		background: white;
 		width: 100%;
 		border:none;
-		position:relative;
 		font-size: 15px;
-		text-align: center;
 		color: #8A8A8A;
-		vertical-align: middle;
 		text-align: center;
-		margin-top: 20px;
 		height:40px;
 	}
 .dc-legend, .dc-chart, .chart-title, .box text {
-	font-size: 20px;
+	font-size: 15px;
 }
 footer {
 	padding-top: 80px;
+	padding-bottom: 100px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -173,12 +192,19 @@ footer {
 	.col {
 		width: 100%;
 	}
+	.container {
+		width:80%;
+	}
 
 }
 @media only screen and (max-width: 800px) {
 
-	.col-1, .col-2 {
+	.col-1, .col-2, .container {
 		width: 100%;
 	}
+	#total-projects, #net-donations, #menuselect {
+		font-size: 1em;
+	}
+	
 
 }
