@@ -1,9 +1,6 @@
 window.onresize = function(){ location.reload(); }
 
 var map;
-
-
-
 	  
 queue()
     .defer(d3.json, "/api/data")
@@ -62,7 +59,38 @@ function makeGraphs(error, apiData) {
 	var minDate = datePosted.bottom(1)[0].date_posted;
 	var maxDate = datePosted.top(1)[0].date_posted;
 
-	$(document).ready(function () {
+$(document).ready(function () {
+		//posting new data
+		$('#post').on('click', function(e){
+			e.preventDefault();
+			var title = $('#toDatabase').val();
+			
+			$.ajax({
+				type: 'POST',
+				url: 'https://api.mongolab.com/api/1/databases/heroku_vn0z7b7h/collections/projects?apiKey=S0FwutxO6pA-VhCyjOZNYA9K4BGqMywv',
+				data: JSON.stringify({
+					'title': title
+				}),
+
+				contentType: 'application/json',
+				success: function(data) {
+					alert('added ' + title + 'to second database')
+				},
+				error: function() {
+					alert('error')
+				}
+			});
+		});
+		function getData(){
+			$.ajax({
+				type: 'GET',
+				contentType: "application/json",
+				url:'https://api.mongolab.com/api/1/databases/heroku_vn0z7b7h/collections/projects?apiKey=S0FwutxO6pA-VhCyjOZNYA9K4BGqMywv'
+			}).done(function(data){
+					console.log(data);
+				})
+		};
+		
 
 		// Store currentRegion
 		var currentRegion = 'ca';
@@ -116,8 +144,7 @@ function makeGraphs(error, apiData) {
 	var totalProjects = dc.numberDisplay("#total-projects");
 	var netDonations = dc.numberDisplay("#net-donations");
 	var stateDonations = dc.barChart("#state-donations");
-
-
+		
 	selectField = dc.selectMenu('#menuselect')
         .dimension(state)
 		.group(stateGroup); 
@@ -140,7 +167,7 @@ function makeGraphs(error, apiData) {
 
 	dateChart 
 		//.width(600)
-		.height(220)
+		.height(320)
 		.margins({top: 10, right: 50, bottom: 30, left: 50})
 		.dimension(datePosted)
 		.group(projectsByDate)

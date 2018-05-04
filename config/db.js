@@ -1,4 +1,3 @@
 module.exports = {
-	urlSubjectViews: 'mongodb://heroku_3qmlb964:f7km0l1imggouagi7lqhra93ft@ds123136.mlab.com:23136/heroku_3qmlb964',
-
+	urlSubjectViews: 'mongodb://heroku_001w0tm0:32uofk31a707263mmi9khfohji@ds115420.mlab.com:15420/heroku_001w0tm0',
 }
